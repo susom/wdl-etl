@@ -14,8 +14,8 @@ version = "1.0.0"
 @init
 def initialize(project):
     project.set_property('distutils_console_scripts', [
-        "jbq = gcp-utils.bigquery:main",
-        "yaml2wdl = common-utils.yaml2wdl:main",
-        "slacker = common-utils.slacker:main",
-        "mailer = common-utils.mailer:main"
+        "jbq = jgcp.bigquery:main",
+        "yaml2wdl = utils.yaml2wdl:main",
+        "slacker = utils.slacker:main",
+        "mailer = utils.mailer:main"
     ])

@@ -1,5 +1,5 @@
-TARGET = wdl-utils
-VERSION = 0.1.0
+TARGET = utilities
+VERSION = 1.0.0
 
 .PHONY: clean
 
