@@ -16,8 +16,8 @@ Inside of "wdl":
 
 # Steps to execute example workflow
 * In the root folder, open a terminal window (VSCode or IDE of choice)
-    * Run the "make" command
-* Create a copy of input-example.json, name it input.json and place it in the "workflow" folder
+    * Run the command: `make`
+* Create a copy of input-example.json, name it input.json and place it in the `workflow` folder
 * Fill in all of the fields specific to you
     * credentials file
     * API Project ID (the project ID that you will be doing work in)
@@ -26,6 +26,6 @@ Inside of "wdl":
     * Version (suffix of the dataset)
     * Release Group (personal preference, can be anything)
     * Main Access Entries (emails of users/Service Accounts that will require access to the created datasets, tables, etc.)
-* In your terminal window, navigate into the "wdl" folder
-* Navigate down one more folder into "workflow"
-* In the terminal/command line, run the following command `miniwdl run main.wdl -i input.json`
+* In your terminal window, navigate into the `wdl` folder
+* Navigate down one more folder into `workflow`
+* In the terminal/command line, run the following command: `miniwdl run main.wdl -i input.json`
