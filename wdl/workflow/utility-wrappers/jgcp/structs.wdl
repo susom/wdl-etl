@@ -121,10 +121,10 @@ struct ScriptOptions {
 }
 
 # Replace all places where these two variables are in the code
-struct Config {
+struct GcpConfig {
   File? credentials
-  String gcpProject
-  String jgcp
+  String apiProjectId
+  String jgcpVersion
 }
 
 struct SlackConfig {

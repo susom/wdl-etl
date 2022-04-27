@@ -1,6 +1,6 @@
 version development
 
-import "workflow/utility-wrappers/jgcp/bigquery.wdl" as bigquery
+import "../utility-wrappers/jgcp/bigquery.wdl" as bigQuery
 
 workflow CreateDatasetExample {
     input {
@@ -11,7 +11,7 @@ workflow CreateDatasetExample {
         Dataset dataset
     }
 
-    call bigquery.CreateDataset as ExampleDataset {
+    call bigQuery.CreateDataset as ExampleDataset {
         input:
             credentials = credentials,
             projectId = projectId,

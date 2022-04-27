@@ -5,5 +5,5 @@ populate_data: |-
        year as year,
        state as state,
        number as number
-  FROM `{sourceTable}` 
+  FROM `{sourceProjectId}.{sourceDatasetId}.{sourceTableId}` 
   WHERE number > 2000 AND year > 1990

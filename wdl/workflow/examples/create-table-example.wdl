@@ -1,6 +1,6 @@
 version development
 
-import "workflow/utility-wrappers/jgcp/bigquery.wdl" as bigquery
+import "../utility-wrappers/jgcp/bigquery.wdl" as bigQuery
 import ".create-table-example.yaml.wdl" as yaml
 
 workflow CreateTableExample {
@@ -17,7 +17,7 @@ workflow CreateTableExample {
     Map[String, Table] tables = read_json(GetYaml.yaml)
 
     Table exampleTable = tables["name_table"]
-    call bigquery.CreateTable as CreateExampleTable {
+    call bigQuery.CreateTable as CreateExampleTable {
         input:
             credentials = gcpConfig.credentials, projectId = gcpConfig.apiProjectId, dockerImage = gcpConfig.jgcpVersion,
             table = exampleTable,

@@ -13,7 +13,7 @@
     "Main.prefix": "prefix",
     "Main.version": "_YYYY_MM_DD",
     "Main.releaseGroup": "example_release_dev",
-    "Main.baselineAccessEntries": [
+    "Main.mainAccessEntries": [
         {
           "role": "OWNER",
           "userByEmail": "serviceaccount@example.com"

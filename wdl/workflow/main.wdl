@@ -1,13 +1,13 @@
 version development
 
-import "workflow/examples/create-dataset-example.wdl" as createDatasetExample
-import "workflow/examples/create-table-example.wdl" as createTableExample
-import "workflow/examples/query-table-example.wdl" as queryTableExample
+import "examples/create-dataset-example.wdl" as createDatasetExample
+import "examples/create-table-example.wdl" as createTableExample
+import "examples/query-table-example.wdl" as queryTableExample
 
 workflow Main {
     input {
         GcpConfig gcpConfig
-        Table sourceTable
+        TableReference sourceTable
         String targetProjectId
         String? prefix
         String version
@@ -24,25 +24,25 @@ workflow Main {
                 description: "WDL example dataset, built from the Big Query public datasets",
                 datasetReference: { "projectId": "~{targetProjectId}", "datasetId": "~{release}" },
                 labels: { "release_name": "~{release}", "release_group": "~{releaseGroup}", "archive" : "all" },
-                access: baselineAccessEntries
+                access: mainAccessEntries
             }
     }
 
     call createTableExample.CreateTableExample as ExampleTable {
         input: 
             gcpConfig = gcpConfig,
-            exampleDataset = ExampleDataset.createdDataset.datasetReference
+            exampleDataset = ExampleDataset.exampleDataset.datasetReference
     }
 
     call queryTableExample.QueryTableExample as PopulateTable {
         input: 
             gcpConfig = gcpConfig,
-            exampleTable = ExampleTable.table,
-            exampleDataset = ExampleDataset.createdDataset.datasetReference,
+            exampleTable = ExampleTable.createdExampleTable,
+            exampleDataset = ExampleDataset.exampleDataset.datasetReference,
             sourceTable = sourceTable
     }
 
     output {
-        DatasetReference datasetOut = ExampleDataset.createdDataset
+        DatasetReference datasetOut = ExampleDataset.exampleDataset.datasetReference
     }
 }
