@@ -1,0 +1,9 @@
+populate_data: |-
+  --sql
+  SELECT name as name,
+       gender as gender,
+       year as year,
+       state as state,
+       number as number
+  FROM `{sourceTable}` 
+  WHERE number > 2000 AND year > 1990

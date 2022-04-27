@@ -1,0 +1,18 @@
+name_table:
+  description: Example table that contains sample data from the usa_names dataset in the public Big Query project
+  schema:
+    fields:
+      - name: name
+        type: STRING
+      - name: gender
+        type: STRING
+      - name: year
+        type: INTEGER
+      - name: state
+        type: STRING
+      - name: number
+        type: INTEGER
+  tableReference:
+    projectId: "~{project}"
+    datasetId: "~{dataset}"
+    tableId: name_table

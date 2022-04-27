@@ -1,0 +1,30 @@
+{
+    "Main.gcpConfig": {
+        "credentials": "path to credential file",
+        "apiProjectId": "project-id",
+        "jgcpVersion": "utilities:1.0.0"
+    },
+    "Main.sourceTable" : {
+        "projectId": "bigquery-public-data",
+        "datasetId": "usa_names",
+        "tableId": "usa_1910_current"
+    },
+    "Main.targetProjectId": "target-project-id",
+    "Main.prefix": "prefix",
+    "Main.version": "_YYYY_MM_DD",
+    "Main.releaseGroup": "example_release_dev",
+    "Main.baselineAccessEntries": [
+        {
+          "role": "OWNER",
+          "userByEmail": "serviceaccount@example.com"
+        },
+        {
+          "role": "OWNER",
+          "userByEmail": "user@example.com"
+        },
+        {
+          "role": "OWNER",
+          "userByEmail": "user@example.com"
+        }
+    ]
+}
