@@ -14,6 +14,5 @@ clean:
 
 install:
 	DOCKER_BUILDKIT=0 COMPOSE_DOCKER_CLI_BUILD=0 pyb install
-
-pipinstall: install
 	pip install target/dist/$(TARGET)-$(VERSION)
+	
